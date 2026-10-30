@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestion des clients et réclamations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Gestion des clients et réclamations</h1>
+    <nav>
+      <button data-tab="clients" class="actif">👥 Clients</button>
+      <button data-tab="reclamations">📋 Réclamations</button>
+    </nav>
+  </header>
+  <main>
+    <div class="stats" id="stats"></div>
+    <section id="clients">
+      <form id="form-clients">
+        <input type="hidden" name="id">
+        <input name="nom" placeholder="Nom" required>
+        <input name="prenom" placeholder="Prénom" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="telephone" placeholder="Téléphone">
+        <input name="adresse" placeholder="Adresse">
+        <button>Enregistrer</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Adresse</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="liste-clients"></tbody>
+      </table>
+    </section>
+    <section id="reclamations" hidden>
+      <form id="form-reclamations">
+        <input type="hidden" name="id">
+        <select name="client_id" required></select>
+        <input name="objet" placeholder="Objet" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <select name="statut">
+          <option>Ouverte</option>
+          <option>En cours</option>
+          <option>Résolue</option>
+          <option>Clôturée</option>
+        </select>
+        <button>Enregistrer</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Objet</th>
+            <th>Description</th>
+            <th>Statut</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="liste-reclamations"></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
